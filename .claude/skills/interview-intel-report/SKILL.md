@@ -1,6 +1,6 @@
 ---
 name: interview-intel-report
-description: Generate a comprehensive, OSINT-driven interview preparation brief for a job interview. Use when the user is preparing for a job interview and wants a data-driven business intelligence report on a company and role — including company background, financials, security posture, and tailored talking points. Trigger when the user provides a company name, position title, and/or resume and asks for interview prep, an "intel report", a company briefing, or research before an interview.
+description: Generate a comprehensive, preparation brief for a job interview. Use when the user is preparing for a job interview and wants a data-driven business intelligence report on a company and role — including company background, financials, security posture, and tailored talking points. Trigger when the user provides a company name, position title, and/or resume and asks for interview prep, an "intel report", a company briefing, or research before an interview.
 ---
 
 # Interview Intel Report
