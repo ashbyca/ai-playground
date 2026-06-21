@@ -10,5 +10,14 @@
         ]
       }
     ]
+  },
+  "extraKnownMarketplaces": {
+    "Liberty91 Ltd": {
+      "source": "github",
+      "repo": "Liberty91LTD/cti-skills"
+    }
+  },
+  "enabledPlugins": {
+    "cti-skills@Liberty91 Ltd": true
   }
 }
