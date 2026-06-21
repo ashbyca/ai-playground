@@ -7,12 +7,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a personal AI playground for experimenting with Claude Code configurations, skills, and workflows. There is no application to build, test, or run. The repo contains:
 
 - `CLAUDE.md` — behavioral instructions and working norms
-- `.claude/skills/` — custom slash command skills (resume-analysis, resume-gap-analysis, interview-intel-report)
+- `.claude/skills/` — custom slash command skills:
+  - Career: resume-analysis, resume-gap-analysis, interview-intel-report
+  - Ops/security: dnsbl-check, memory-forensics, windows-sysinfo, bulk-dns-lookup, linux-firewall-hardening, git-repos-update, ssl-cert-convert, dynamic-motd, macos-security-setup
 - `settings.json` — SessionStart hook that installs npm/pip packages in remote environments
 
 ## Skills development
 
-Custom skills live in `.claude/skills/<skill-name>/SKILL.md`. Each skill is a markdown file that gets loaded as a slash command.
+Custom skills live in `.claude/skills/<skill-name>/SKILL.md`. Each skill is a markdown file that gets loaded as a slash command. A skill may bundle helper scripts under `<skill-name>/scripts/` that the SKILL.md instructs Claude to run.
 
 ---
 
