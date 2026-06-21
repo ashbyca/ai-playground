@@ -36,11 +36,11 @@ downloads), detects which MOTD framework the host uses, and degrades gracefully
 across distros (prefers `ip` over deprecated `ifconfig`; finds `auth.log` vs
 `secure` vs `messages`; tries dnf/apt/yum for the update count).
 
-## ⚠️ Needs root and changes login behavior
+## Requires root
 
-Installs to `/etc/update-motd.d/` or `/usr/local/sbin` + `/etc/cron.hourly`, and
-writes `/etc/motd`. Preview first and confirm with the user before applying to a
-real host.
+Installs to `/etc/update-motd.d/` or `/usr/local/sbin` + `/etc/cron.hourly` and
+writes `/etc/motd`, so run it with `sudo`. It applies directly; a `--dry-run` flag
+is available to preview the detected framework and generator if wanted.
 
 ## How to run
 

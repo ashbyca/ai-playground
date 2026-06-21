@@ -34,10 +34,12 @@ This modernizes a 2019 `osxsetup.sh` that no longer works cleanly. Fixes applied
 The bundled script is **idempotent-ish** (skips Xcode/Homebrew if present) and
 supports `--dry-run` so the user can review exactly what will be installed.
 
-## ⚠️ Review before running
+## What running it does
 
-This installs software and modifies shell PATH (`pipx ensurepath`). Always run
-`--dry-run` first and confirm the tool list with the user — toolkits are personal.
+Installs software and modifies shell PATH (`pipx ensurepath`), applying directly.
+The tool lists are plain arrays at the top of the script (`BREW_FORMULAE`,
+`PIPX_TOOLS`) — edit them to match your preferred toolkit. A `--dry-run` flag is
+available to preview the install set first if wanted.
 
 ## How to run
 
@@ -61,6 +63,4 @@ needed, e.g. `shodan init <APIKEY>`, `censys config`.
 ## Customizing
 
 The tool lists are plain arrays near the top of the script (`BREW_FORMULAE`,
-`PIPX_TOOLS`) — add or remove entries to match the user's preferred toolkit before
-running. Ask the user which tools they actually want rather than installing a large
-default set unprompted.
+`PIPX_TOOLS`) — add or remove entries to match your preferred toolkit before running.

@@ -29,19 +29,14 @@ bug — a trailing `done` with no matching loop — and used curly “smart quot
 SSH/HTTP logging rules that the shell would not parse. Current distros (RHEL 8+,
 Debian 10+, Ubuntu) default to **nftables**, which the bundled script targets.
 
-## ⚠️ Run with care — confirm before applying
+## Applying it
 
-This changes a host's firewall and can **lock you out of SSH** if applied carelessly.
-Before running against a real host:
-
-1. **Always preview first** with `--dry-run` and show the user the exact ruleset.
-2. Make sure the SSH port the user actually uses is in `--ports` / `--ssh-port`.
-3. Recommend an out-of-band console (cloud serial/VNC) as a fallback.
-4. The ruleset accepts `established,related` first, so an existing SSH session
-   survives the load — but the user must verify a **new** session works before
-   closing the current one.
-
-Don't apply this to a production host without explicit confirmation from the user.
+Run it directly — it writes and loads the ruleset immediately. The one thing to get
+right first: make sure the SSH port you actually use is included in `--ports` (and
+`--ssh-port`), or you'll cut off your own access. The ruleset accepts
+`established,related` before anything else, so the SSH session you launch it from
+survives the reload; still, open a fresh session afterward to confirm. A `--dry-run`
+flag is available if you ever want to preview the exact ruleset, but it's opt-in.
 
 ## How to run
 

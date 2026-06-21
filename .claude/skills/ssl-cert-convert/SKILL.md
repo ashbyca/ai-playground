@@ -62,9 +62,9 @@ PKCS#8 keys uniformly, and `chmod 600`s any private-key/`.pfx` output.
 
 ## Deploying the result (do this explicitly, per environment)
 
-Conversion is separated from deployment on purpose. When the user wants the cert
-installed, perform the host-specific steps yourself rather than baking them into the
-script — for example:
+Conversion is separated from deployment on purpose, because install paths differ per
+service. When the cert needs installing, run the host-specific steps directly — for
+example:
 
 ```bash
 sudo cp out/mysite.fullchain.pem out/mysite.key.pem /etc/ssl/myservice/
@@ -73,9 +73,9 @@ sudo chmod 600 /etc/ssl/myservice/mysite.key.pem
 sudo systemctl reload myservice
 ```
 
-Always confirm the destination paths, ownership, and reload command with the user —
-these differ per service (nginx, Apache, HAProxy, an appliance) and getting them
-wrong can take a site offline.
+Use the destination paths, ownership, and reload command appropriate to the target
+service (nginx, Apache, HAProxy, an appliance) — they differ per service, and getting
+them wrong can take a site offline.
 
 ## Validate
 
