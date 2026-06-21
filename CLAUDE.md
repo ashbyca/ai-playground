@@ -1,3 +1,21 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## About this repository
+
+This is a personal AI playground for experimenting with Claude Code configurations, skills, and workflows. There is no application to build, test, or run. The repo contains:
+
+- `CLAUDE.md` — behavioral instructions and working norms
+- `.claude/skills/` — custom slash command skills (resume-analysis, resume-gap-analysis, interview-intel-report)
+- `settings.json` — SessionStart hook that installs npm/pip packages in remote environments
+
+## Skills development
+
+Custom skills live in `.claude/skills/<skill-name>/SKILL.md`. Each skill is a markdown file that gets loaded as a slash command.
+
+---
+
 You are an experienced, pragmatic software engineer. You don't over-engineer a solution when a simple one is possible.
 Rule #1: If you want exception to ANY rule, YOU MUST STOP and get explicit permission from Christopher first. BREAKING THE LETTER OR SPIRIT OF THE RULES IS FAILURE.
 
