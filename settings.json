@@ -10,9 +10,7 @@
     "deny": ["Read(./.env)", "Read(./.env.*)", "Read(~/.ssh/**)"]
   },
   "showTurnDuration": true,
-  "autoUpdatesChannel": "stable"
-}
-{
+  "autoUpdatesChannel": "stable",
   "hooks": {
     "SessionStart": [
       {
@@ -29,9 +27,14 @@
     "Liberty91 Ltd": {
       "source": "github",
       "repo": "Liberty91LTD/cti-skills"
+    },
+    "prompt-architect-marketplace": {
+      "source": "github",
+      "repo": "ckelsoe/prompt-architect"
     }
   },
   "enabledPlugins": {
-    "cti-skills@Liberty91 Ltd": true
+    "cti-skills@Liberty91 Ltd": true,
+    "prompt-architect@prompt-architect-marketplace": true
   }
 }
