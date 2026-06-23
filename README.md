@@ -57,6 +57,39 @@ The tables below show each skill's slash command and what it does.
 | `/dynamic-motd` | Install a dynamic Linux login banner showing host stats, pending updates, and recent SSH activity. |
 | `/macos-security-setup` | Bootstrap a macOS machine for security/OSINT work (Xcode CLI tools, Homebrew, pipx-isolated Python tools). |
 
+### Plugin skills
+
+Beyond the skills in this repo, `settings.json` enables two external plugins from their
+GitHub marketplaces (see [Configuration](#configuration)). Their skills are **not stored in
+this repository** — they are fetched from the marketplace repos and become available as
+slash commands once the plugins are installed. They activate the same way as local skills:
+type the `/slash-command` or describe the task in plain language.
+
+#### [`prompt-architect`](https://github.com/ckelsoe/prompt-architect)
+
+| Slash command | What it does |
+| --- | --- |
+| `/prompt-architect` | Analyze a rough prompt, recommend an optimal prompting framework (CO-STAR, RISEN, TIDD-EC, and 24 others), ask clarifying questions, and restructure the prompt for clarity and effectiveness. |
+
+#### [`cti-skills`](https://github.com/Liberty91LTD/cti-skills)
+
+A Cyber Threat Intelligence suite of 70+ skills spanning the full CTI lifecycle. Start with
+`/cti-orchestrator` (routes a request to the right skills) and `/cti-setup` (configures API
+keys). The rest are grouped below by function:
+
+| Group | Slash commands |
+| --- | --- |
+| Entry & orchestration | `/cti-orchestrator`, `/cti-setup`, `/cti-hyperloop` |
+| Investigation | `/ip-investigation`, `/domain-investigation`, `/hash-investigation`, `/url-investigation` |
+| Analysis & structured techniques | `/threat-actor-profiling`, `/threat-assessment`, `/ach`, `/indicator-pivoting`, `/campaign-tracking`, `/malware-analysis`, `/horizon-scanning`, `/key-assumptions-check`, `/red-team-analysis`, `/structured-analytic-techniques`, `/vulnerability-intelligence` |
+| Collection | `/osint-methodology`, `/darkweb-collection` |
+| Tradecraft & production | `/tlp-guide`, `/source-assessment`, `/confidence-levels`, `/likelihood-language`, `/intelligence-writing`, `/writing-assessments`, `/quality-control`, `/ioc-export`, `/stix-bundle`, `/ioc-enrichment-workflow` |
+| Detection engineering | `/sigma-writing`, `/yara-writing`, `/kql-writing`, `/mitre-attack` |
+| Threat knowledge cells | `/china-cyber-espionage`, `/russia-cyber-espionage`, `/iran-cyber-espionage`, `/dprk-cyber-espionage`, `/ransomware-ecosystem`, `/infostealers`, `/initial-access-brokers`, `/phishing-social-engineering`, `/supply-chain-threats`, `/carding-financial-fraud`, `/hacktivism` |
+| Lookups (live enrichment) | `/lookup-virustotal`, `/lookup-otx`, `/lookup-urlscan`, `/lookup-shodan`, `/lookup-censys`, `/lookup-greynoise`, `/lookup-abuseipdb`, `/lookup-misp`, `/lookup-reversinglabs`, `/lookup-crowdstrike`, `/lookup-ransomwarelive` |
+| API integration cells | `/virustotal-api`, `/otx-api`, `/urlscan-api`, `/shodan-api`, `/censys-api`, `/greynoise-api`, `/abuseipdb-api`, `/reversinglabs-api`, `/crowdstrike-api` |
+| Program management | `/pir-management`, `/stakeholder-management`, `/feedback-loops`, `/sops`, `/maturity-assessment`, `/intelligence-sharing` |
+
 ## Configuration
 
 `settings.json` configures Claude Code for this repository:
