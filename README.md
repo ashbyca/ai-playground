@@ -21,27 +21,41 @@ Custom skills live in `.claude/skills/<skill-name>/SKILL.md`. Each skill is a ma
 file loaded as a slash command, and may bundle helper scripts under
 `<skill-name>/scripts/` that the skill instructs Claude to run.
 
+### How to activate a skill
+
+There are two ways to invoke any of the skills below:
+
+- **Explicitly** — type a slash command with the skill's name, e.g. `/dnsbl-check`,
+  optionally followed by arguments (`/dnsbl-check 203.0.113.10`). Type `/` in Claude Code
+  to see the list of available skills and autocomplete the name.
+- **Automatically** — just describe what you want in plain language. Each skill declares
+  trigger phrases in its `SKILL.md`, and Claude loads the matching skill on its own. For
+  example, "is this IP blacklisted?" activates `dnsbl-check`, and "analyze this memory dump"
+  activates `memory-forensics`.
+
+The tables below show each skill's slash command and what it does.
+
 ### Career
 
-| Skill | What it does |
+| Slash command | What it does |
 | --- | --- |
-| `resume-analysis` | ATS-compatibility formatting comparison across resume versions, or gap analysis against a single job description. |
-| `resume-gap-analysis` | Compare a resume against one or more job descriptions to identify skill gaps and optimization advice. |
-| `interview-intel-report` | Generate a data-driven interview prep brief covering a company's background, financials, security posture, and tailored talking points. |
+| `/resume-analysis` | ATS-compatibility formatting comparison across resume versions, or gap analysis against a single job description. |
+| `/resume-gap-analysis` | Compare a resume against one or more job descriptions to identify skill gaps and optimization advice. |
+| `/interview-intel-report` | Generate a data-driven interview prep brief covering a company's background, financials, security posture, and tailored talking points. |
 
 ### Ops & security
 
-| Skill | What it does |
+| Slash command | What it does |
 | --- | --- |
-| `dnsbl-check` | Check whether a public IPv4 address is listed on common DNS blacklists (DNSBLs/RBLs). |
-| `bulk-dns-lookup` | Resolve many hostnames against one or more name servers and write a timestamped CSV. |
-| `memory-forensics` | First-pass triage of a Windows memory image with Volatility 3 (processes, netconns, injected code, persistence, YARA). |
-| `windows-sysinfo` | Collect a hardware/OS/network inventory of local or remote Windows hosts via CIM. |
-| `linux-firewall-hardening` | Apply a baseline nftables host firewall, harden kernel network sysctls, and install Fail2ban. |
-| `git-repos-update` | Discover and `git pull` every repository under one or more directories, with per-repo logging. |
-| `ssl-cert-convert` | Convert TLS/SSL certs and keys between PEM, DER, and PKCS#12, and build fullchain bundles, via OpenSSL. |
-| `dynamic-motd` | Install a dynamic Linux login banner showing host stats, pending updates, and recent SSH activity. |
-| `macos-security-setup` | Bootstrap a macOS machine for security/OSINT work (Xcode CLI tools, Homebrew, pipx-isolated Python tools). |
+| `/dnsbl-check` | Check whether a public IPv4 address is listed on common DNS blacklists (DNSBLs/RBLs). |
+| `/bulk-dns-lookup` | Resolve many hostnames against one or more name servers and write a timestamped CSV. |
+| `/memory-forensics` | First-pass triage of a Windows memory image with Volatility 3 (processes, netconns, injected code, persistence, YARA). |
+| `/windows-sysinfo` | Collect a hardware/OS/network inventory of local or remote Windows hosts via CIM. |
+| `/linux-firewall-hardening` | Apply a baseline nftables host firewall, harden kernel network sysctls, and install Fail2ban. |
+| `/git-repos-update` | Discover and `git pull` every repository under one or more directories, with per-repo logging. |
+| `/ssl-cert-convert` | Convert TLS/SSL certs and keys between PEM, DER, and PKCS#12, and build fullchain bundles, via OpenSSL. |
+| `/dynamic-motd` | Install a dynamic Linux login banner showing host stats, pending updates, and recent SSH activity. |
+| `/macos-security-setup` | Bootstrap a macOS machine for security/OSINT work (Xcode CLI tools, Homebrew, pipx-isolated Python tools). |
 
 ## Configuration
 
