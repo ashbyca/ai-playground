@@ -1,5 +1,7 @@
 # AI-Playground
 
+## About
+
 A personal playground for experimenting with [Claude Code](https://claude.com/claude-code)
 configurations, custom skills, and workflows. There is no application to build, test, or
 run here — the repository is a collection of behavioral instructions, reusable skills, and
